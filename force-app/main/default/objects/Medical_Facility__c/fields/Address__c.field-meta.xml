@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Address record for the facility</description>
+    <externalId>false</externalId>
+    <label>Address</label>
+    <referenceTo>Address</referenceTo>
+    <relationshipLabel>Medical Facilities</relationshipLabel>
+    <relationshipName>Medical_Facilities</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

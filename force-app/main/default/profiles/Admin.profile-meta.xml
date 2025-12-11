@@ -488,16 +488,24 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Closing_Hours__c</field>
         <field>Medical_Insurance__c.Coverage_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Email__c</field>
         <field>Medical_Insurance__c.Emergency_Coverage__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Fax__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Medical_Facility__c.Medical_Facility_Code__c</field>
         <field>Medical_Insurance__c.Expiration_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -513,11 +521,13 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Opening_Hours__c</field>
         <field>Medical_Insurance__c.Policy_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Phone_Number__c</field>
         <field>Medical_Insurance__c.Start_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -726,6 +736,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Medical_Facility__c</object>
         <object>Medical_Insurance__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>

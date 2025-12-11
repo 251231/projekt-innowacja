@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Start_Date_Cannot_Be_Later_Than_Exp_date</fullName>
-    <active>true</active>
-    <errorConditionFormula>Start_Date__c &gt;  Expiration_Date__c</errorConditionFormula>
-    <errorMessage>Data zawarcia polisy nie może być późniejsza niż data jej zakończenia</errorMessage>
-</ValidationRule>

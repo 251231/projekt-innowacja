@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prescription__c</fullName>
+    <externalId>false</externalId>
+    <label>Prescription</label>
+    <referenceTo>Prescription__c</referenceTo>
+    <relationshipLabel>Drugs</relationshipLabel>
+    <relationshipName>Drugs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,4 +1,4 @@
-name: Deploy dev to integrated Sandbox
+name: Deploy to integrated Sandbox
 
 on:
   push:

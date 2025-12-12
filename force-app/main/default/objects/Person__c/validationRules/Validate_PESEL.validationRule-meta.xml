@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_PESEL</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(LEN(Personal_ID_Number__c) &lt;&gt; 11,
+NOT( ISNUMBER( Personal_ID_Number__c ) ),
+
+VALUE(MID(Personal_ID_Number__c, 11, 1))
+&lt;&gt;
+MOD(10-MOD(VALUE(MID(Personal_ID_Number__c, 1, 1)) * 1 +
+VALUE(MID(Personal_ID_Number__c, 2, 1)) * 3 +
+VALUE(MID(Personal_ID_Number__c, 3, 1)) * 7 +
+VALUE(MID(Personal_ID_Number__c, 4, 1)) * 9 +
+VALUE(MID(Personal_ID_Number__c, 5, 1)) * 1 +
+VALUE(MID(Personal_ID_Number__c, 6, 1)) * 3 +
+VALUE(MID(Personal_ID_Number__c, 7, 1)) * 7 +
+VALUE(MID(Personal_ID_Number__c, 8, 1)) * 9 +
+VALUE(MID(Personal_ID_Number__c, 9, 1)) * 1 +
+VALUE(MID(Personal_ID_Number__c, 10, 1)) * 3,10),10)
+)</errorConditionFormula>
+    <errorMessage>Invalid PESEL number</errorMessage>
+</ValidationRule>

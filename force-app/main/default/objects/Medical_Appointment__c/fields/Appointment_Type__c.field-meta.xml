@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Appointment_Type__c</fullName>
+    <description>Typ wizyty</description>
+    <externalId>false</externalId>
+    <label>Appointment Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Specialist Consultation</fullName>
+                <default>false</default>
+                <label>Specialist Consultation</label>
+            </value>
+            <value>
+                <fullName>Follow-up Appointment</fullName>
+                <default>false</default>
+                <label>Follow-up Appointment</label>
+            </value>
+            <value>
+                <fullName>General Check-up</fullName>
+                <default>false</default>
+                <label>General Check-up</label>
+            </value>
+            <value>
+                <fullName>Operation</fullName>
+                <default>false</default>
+                <label>Operation</label>
+            </value>
+            <value>
+                <fullName>Telehealth</fullName>
+                <default>false</default>
+                <label>Telehealth</label>
+            </value>
+            <value>
+                <fullName>Urgent Care</fullName>
+                <default>false</default>
+                <label>Urgent Care</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

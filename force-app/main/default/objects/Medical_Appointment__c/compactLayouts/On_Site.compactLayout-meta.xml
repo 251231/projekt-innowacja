@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Site</fullName>
+    <fields>Appointment_DateTime__c</fields>
+    <fields>Appointment_Status__c</fields>
+    <fields>Appointment_Type__c</fields>
+    <fields>Department__c</fields>
+    <fields>Description__c</fields>
+    <fields>Duration_Time__c</fields>
+    <fields>Name</fields>
+    <fields>Reason__c</fields>
+    <label>On Site</label>
+</CompactLayout>

@@ -1,5 +1,4 @@
-name: Deploy to integrated Sandbox
-//test
+name: Deploy dev to integrated Sandbox
 on:
   push:
     branches:

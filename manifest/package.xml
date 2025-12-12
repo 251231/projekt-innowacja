@@ -22,7 +22,13 @@
         <members>Lead-Lead Layout</members>
         <members>Product2-Product Layout</members>
         <members>Order-Order Layout</members>
+        <members>Medical_Appointment__c-On Site</members>
+        <members>Medical_Appointment__c-Online</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>MediMeetAssistant</members>
+        <name>CustomApplication</name>
     </types>
     <types>
         <members>Admin</members>

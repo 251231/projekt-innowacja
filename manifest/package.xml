@@ -9,7 +9,8 @@
         <members>Order</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
-        <members>Drug__c</members>
+        <members>Medical_Appointment__c</members>
+        <members>Medicament__c</members>
         <members>Prescription__c</members>
         <name>CustomObject</name>
     </types>

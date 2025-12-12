@@ -27,6 +27,14 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>Medical_Appointment__c</members>
+        <members>Medical_Facility__c</members>
+        <members>Medical_Insurance__c</members>
+        <members>Prescription__c</members>
+        <members>Person__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
         <members>MediMeetAssistant</members>
         <name>CustomApplication</name>
     </types>

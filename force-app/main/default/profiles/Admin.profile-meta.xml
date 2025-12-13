@@ -765,6 +765,9 @@
         <recordType>Medical_Appointment__c.Online</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Medicament__c-Medicament Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Order-Order Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

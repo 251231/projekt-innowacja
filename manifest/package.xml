@@ -27,7 +27,7 @@
         <members>Person__c-Doctor Layout</members>
         <members>Person__c-Patient Layout</members>
         <members>Person__c-Person Layout</members>
-
+        <members>Medicament__c-Medicament Layout</members>
         <name>Layout</name>
     </types>
     <types>

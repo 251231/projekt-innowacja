@@ -503,6 +503,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Appointment__c.Patient__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Medical_Appointment__c.Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -672,19 +677,19 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Person__c.Speciazlization__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Prescription__c.Date_of_issue__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Prescription__c.Expiration_date__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -750,6 +755,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Medical_Appointment__c-On Site</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Medical_Appointment__c-On Site</layout>
         <recordType>Medical_Appointment__c.On_Site</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -758,6 +766,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Order-Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Person__c-Doctor Layout</layout>
+        <recordType>Person__c.Doctor</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Person__c-Patient Layout</layout>
+        <recordType>Person__c.Patient</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Person__c-Person Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Product2-Product Layout</layout>
@@ -881,14 +900,14 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>false</default>
+        <default>true</default>
         <recordType>Person__c.Doctor</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Person__c.Patient</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Medical_Appointment__c</tab>

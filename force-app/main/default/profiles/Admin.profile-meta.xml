@@ -782,6 +782,9 @@
         <layout>Person__c-Person Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Prescription__c-Prescription Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Product2-Product Layout</layout>
     </layoutAssignments>
     <objectPermissions>

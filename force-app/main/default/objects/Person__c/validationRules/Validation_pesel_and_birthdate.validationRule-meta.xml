@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_pesel_and_birthdate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Personal_ID_Number__c)),
+    NOT(ISBLANK(Birth_Date__c)),
+
+    DATE(
+        IF(
+            VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt; 12,
+            2000 + VALUE(MID(Personal_ID_Number__c, 1, 2)),
+            1900 + VALUE(MID(Personal_ID_Number__c, 1, 2))
+        ),
+        IF(
+            VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt; 12,
+            VALUE(MID(Personal_ID_Number__c, 3, 2)) - 20,
+            VALUE(MID(Personal_ID_Number__c, 3, 2))
+        ),
+        VALUE(MID(Personal_ID_Number__c, 5, 2))
+    ) &lt;&gt; Birth_Date__c
+)</errorConditionFormula>
+    <errorMessage>Pesel nie zgadza się z datą urodzenia.</errorMessage>
+</ValidationRule>

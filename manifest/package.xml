@@ -48,10 +48,11 @@
         <members>Validate_PESEL</members>
         <members>Hours_validation</members>
         <members>Start_Date_Cannot_Be_Later_Than_Exp_date</members>
+        <members>Validation_pesel_and_birthdate</members>
         <name>ValidationRule</name>
     </types>
     <types>
-        <members>Medical_Appointment__c.On Site</members>
+        <members>Medical_Appointment__c.On_Site</members>
         <members>Medical_Appointment__c.Online</members>
         <members>Person__c.Doctor</members>
         <members>Person__c.Patient</members>

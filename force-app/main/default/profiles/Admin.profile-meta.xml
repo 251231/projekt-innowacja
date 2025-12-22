@@ -692,6 +692,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Prescription__c.Prescription_number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Product2.Description</field>
         <readable>true</readable>
@@ -758,6 +763,9 @@
     <layoutAssignments>
         <layout>Medical_Appointment__c-Online</layout>
         <recordType>Medical_Appointment__c.Online</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Medical_Insurance__c-Medical Insurance Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Medicament__c-Medicament Layout</layout>

@@ -29,7 +29,7 @@
         <members>Person__c-Person Layout</members>
         <members>Medicament__c-Medicament Layout</members>
         <members>Prescription__c-Prescription Layout</members>
-
+        <members>Medical_Insurance__c Layout</members>
         <name>Layout</name>
     </types>
     <types>

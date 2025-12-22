@@ -5,10 +5,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    <classAccesses>
-        <apexClass>test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -772,6 +768,9 @@
     <layoutAssignments>
         <layout>Medical_Appointment__c-Online</layout>
         <recordType>Medical_Appointment__c.Online</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Medical_Facility__c-Medical Facility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Medical_Insurance__c-Medical Insurance Layout</layout>

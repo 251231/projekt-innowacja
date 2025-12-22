@@ -30,6 +30,7 @@
         <members>Medicament__c-Medicament Layout</members>
         <members>Prescription__c-Prescription Layout</members>
         <members>Medical_Insurance__c-Medical Insurance Layout</members>
+        <members>Medical_Facility__c-Medical Facility Layout</members>
         <name>Layout</name>
     </types>
     <types>
@@ -45,10 +46,15 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Validate_PESEL</members>
-        <members>Hours_validation</members>
-        <members>Start_Date_Cannot_Be_Later_Than_Exp_date</members>
-        <members>Validation_pesel_and_birthdate</members>
+        <members>Person__c.Validate_PESEL</members>
+        <members>Medical_Facility__c.Hours_validation</members>
+        <members>Medical_Insurance__c.Start_Date_Cannot_Be_Later_Than_Exp_date</members>
+        <members>Person__c.Validation_pesel_and_birthdate</members>
+        <members>Medical_Facility__c.Required_City</members>
+        <members>Medical_Facility__c.Required_country</members>
+        <members>Medical_Facility__c.Required_PostalCode</members>
+        <members>Medical_Facility__c.Required_State_Code</members>
+        <members>Medical_Facility__c.Required_Street</members>
         <name>ValidationRule</name>
     </types>
     <types>

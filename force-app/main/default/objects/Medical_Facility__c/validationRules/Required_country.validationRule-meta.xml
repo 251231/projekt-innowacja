@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_country</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( TEXT(Medical_Facility_Address__CountryCode__s) )</errorConditionFormula>
+    <errorDisplayField>Medical_Facility_Address__CountryCode__s</errorDisplayField>
+    <errorMessage>Country of Medical Facility is required</errorMessage>
+</ValidationRule>

@@ -527,6 +527,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Medical_Facility_Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Medical_Facility__c.Medical_Facility_Code__c</field>
         <readable>true</readable>
@@ -1370,6 +1375,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageCustomReportTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCustomerDataOptOut</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

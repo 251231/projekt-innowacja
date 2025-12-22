@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_City</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Medical_Facility_Address__City__s )</errorConditionFormula>
+    <errorDisplayField>Medical_Facility_Address__City__s</errorDisplayField>
+    <errorMessage>City of Medical Facility is required</errorMessage>
+</ValidationRule>

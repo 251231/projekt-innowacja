@@ -9,14 +9,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Birth_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Phone_number__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
@@ -60,6 +52,7 @@
     </layoutSections>
     <miniLayout>
         <fields>Birth_Date__c</fields>
+        <field>Email__c</field>
         <fields>Phone_number__c</fields>
     </miniLayout>
     <relatedLists>

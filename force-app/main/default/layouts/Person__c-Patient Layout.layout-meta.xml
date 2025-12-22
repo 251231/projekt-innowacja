@@ -43,7 +43,6 @@
     </layoutSections>
     <miniLayout>
         <fields>Birth_Date__c</fields>
-        <fields>Email__c</fields>
         <fields>Phone_number__c</fields>
     </miniLayout>
     <relatedLists>

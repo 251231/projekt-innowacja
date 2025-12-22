@@ -68,7 +68,7 @@
     </layoutSections>
     <miniLayout>
         <fields>Birth_Date__c</fields>
-        <field>Email__c</field>
+        <fields>Email__c</fields>
         <fields>Phone_number__c</fields>
     </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>

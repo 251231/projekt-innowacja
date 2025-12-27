@@ -65,6 +65,15 @@
         <name>RecordType</name>
     </types>
     <types>
+        <members>CheckInsuranceTriggerHandler</members>
+        <members>TriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CheckInsurance</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>Admin </members>
         <name>Profile</name>
     </types>

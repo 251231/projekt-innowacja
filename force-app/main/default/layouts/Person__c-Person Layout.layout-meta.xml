@@ -71,6 +71,10 @@
         <fields>Email__c</fields>
         <fields>Phone_number__c</fields>
     </miniLayout>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Medical_Insurance__c.Insured_Person__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

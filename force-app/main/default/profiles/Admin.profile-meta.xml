@@ -5,6 +5,14 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>CheckInsuranceTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -503,7 +511,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Medical_Appointment__c.Patient__c</field>
+        <field>Medical_Appointment__c.Medical_facility__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -544,6 +552,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Medical_Facility__c.Phone_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Requires_insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -67,10 +67,13 @@
     <types>
         <members>CheckInsuranceTriggerHandler</members>
         <members>TriggerHandler</members>
+        <members>EmailNotificationTriggerHandler</members>
+        
         <name>ApexClass</name>
     </types>
     <types>
         <members>CheckInsurance</members>
+        <members>MedicalAppointmentTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>

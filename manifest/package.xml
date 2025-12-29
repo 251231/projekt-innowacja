@@ -73,7 +73,7 @@
     </types>
     <types>
         <members>CheckInsurance</members>
-        <members>MedicalAppointmentTrigger</members>
+        <members>MedicalAppointmentEmailTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>

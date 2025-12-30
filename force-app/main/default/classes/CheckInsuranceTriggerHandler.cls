@@ -10,6 +10,13 @@ public class CheckInsuranceTriggerHandler extends TriggerHandler {
         Set<Id> facilityIds = new Set<Id>();
         
         for(Medical_Appointment__c ma : appointments) {
+            //Sprawdzenie czy był update
+            if (oldMap !=null) {
+                Medical_Appointment__c oldma = oldMap.get(ma.Id);
+                if(oldma != null && oldma.Patient__c == ma.Patient__c && oldma.Medical_facility__c == ma.Medical_facility__c) {
+                    continue;
+                }
+            }
             if(ma.Patient__c !=null && ma.Medical_facility__c != null) {
                 patientIds.add(ma.Patient__c);
                 facilityIds.add(ma.Medical_facility__c);

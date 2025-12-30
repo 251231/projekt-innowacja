@@ -155,9 +155,8 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Prescription</label>
     <nameField>
-        <displayFormat>{0000}</displayFormat>
-        <label>Prescription Number</label>
-        <type>AutoNumber</type>
+        <label>Prescription Name</label>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Prescriptions</pluralLabel>
     <searchLayouts></searchLayouts>

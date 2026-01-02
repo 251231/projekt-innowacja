@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Medical_Facility_Code__c</fullName>
-    <description>Unique facility identifier</description>
-    <displayFormat>FAC-{0000}</displayFormat>
-    <externalId>false</externalId>
+    <caseSensitive>false</caseSensitive>
+    <externalId>true</externalId>
     <label>Medical Facility Code</label>
+    <length>30</length>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>AutoNumber</type>
+    <type>Text</type>
+    <unique>true</unique>
 </CustomField>

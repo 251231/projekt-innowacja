@@ -6,15 +6,35 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>CheckFirstInternistVisit</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CheckInsuranceTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TriggerHandler</apexClass>
+        <apexClass>EmailNotificationTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>test</apexClass>
+        <apexClass>MedicalFacilityCallout</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilityCalloutMock</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilityCalloutTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitySchedule</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
@@ -515,6 +535,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Appointment__c.Email_content__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Medical_Appointment__c.Medical_facility__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -525,12 +550,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Medical_Facility__c.Closing_Hours__c</field>
+        <field>Medical_Facility_Opening_Hour__c.Opening_Hour__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility_Opening_Hour__c.Unique_Key__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Medical_Facility__c.Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Facility_type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -546,11 +581,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Medical_Facility__c.Medical_Facility_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Medical_Facility__c.Opening_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -787,6 +817,9 @@
         <recordType>Medical_Appointment__c.Online</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Medical_Facility_Opening_Hour__c-Medical Facility Opening Hour Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Medical_Facility__c-Medical Facility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -858,6 +891,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Medical_Appointment__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Medical_Facility_Opening_Hour__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

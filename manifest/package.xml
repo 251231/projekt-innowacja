@@ -7,6 +7,7 @@
         <members>Medicament__c</members>
         <members>Prescription__c</members>
         <members>Person__c</members>
+        <members>Medical_Facility_Opening_Hour__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -19,6 +20,7 @@
         <members>Prescription__c-Prescription Layout</members>
         <members>Medical_Insurance__c-Medical Insurance Layout</members>
         <members>Medical_Facility__c-Medical Facility Layout</members>
+        <members>Medical_Facility_Opening_Hour__c-Medical Facility Opening Hour Layout</members>
         <name>Layout</name>
     </types>
     <types>
@@ -56,12 +58,17 @@
         <members>CheckInsuranceTriggerHandler</members>
         <members>TriggerHandler</members>
         <members>EmailNotificationTriggerHandler</members>
-        
+        <members>CheckFirstInternistVisit</members>
+        <members>MedicalFacilityCallout</members>
+        <members>MedicalFacilityCalloutMock</members>
+        <members>MedicalFacilityCalloutTest</members>
+        <members>MedicalFacilitySchedule</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>CheckInsurance</members>
         <members>MedicalAppointmentEmailTrigger</members>
+        <members>CheckFirstInternistVisitTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>

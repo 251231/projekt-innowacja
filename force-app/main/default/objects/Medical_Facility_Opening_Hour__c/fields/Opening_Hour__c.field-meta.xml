@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Opening_Hours__c</fullName>
-    <description>Opening hours of the facility</description>
+    <fullName>Opening_Hour__c</fullName>
     <externalId>false</externalId>
-    <label>Opening Hours</label>
+    <label>Opening Hour</label>
+    <length>100</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Time</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

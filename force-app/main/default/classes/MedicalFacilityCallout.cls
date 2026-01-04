@@ -1,6 +1,5 @@
 public class MedicalFacilityCallout
 {
-    
     @future(callout=true)
     public static void syncFacility()
     {

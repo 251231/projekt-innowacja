@@ -37,7 +37,6 @@
     </types>
     <types>
         <members>Person__c.Validate_PESEL</members>
-        <members>Medical_Facility__c.Hours_validation</members>
         <members>Medical_Insurance__c.Start_Date_Cannot_Be_Later_Than_Exp_date</members>
         <members>Person__c.Validation_pesel_and_birthdate</members>
         <members>Medical_Facility__c.Required_City</members>
@@ -70,6 +69,18 @@
         <members>MedicalAppointmentEmailTrigger</members>
         <members>CheckFirstInternistVisitTrigger</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>MedicalFacilityAPI</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>MedicalFacilityExternalCred</members>
+        <name>ExternalCredential</name>
+    </types>
+    <types>
+        <members>MedicalFacility_API_Access</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Admin</members>

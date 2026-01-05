@@ -71,14 +71,6 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>MedicalFacilityAPI</members>
-        <name>NamedCredential</name>
-    </types>
-    <types>
-        <members>MedicalFacilityExternalCred</members>
-        <name>ExternalCredential</name>
-    </types>
-    <types>
         <members>MedicalFacility_API_Access</members>
         <name>PermissionSet</name>
     </types>

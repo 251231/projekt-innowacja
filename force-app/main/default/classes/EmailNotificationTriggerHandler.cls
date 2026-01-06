@@ -1,6 +1,14 @@
 public with sharing class EmailNotificationTriggerHandler {
+    public override void afterInsert(List<SObject> newList) {
+        sendAppointmentEmails((List<Medical_Appointment__c>) newList, null);
+    }
+    
+    public override void afterUpdate(List<SObject> newList, Map<Id, SObject> oldMap) {
+        sendAppointmentEmails((List<Medical_Appointment__c>) newList, (Map<Id, Medical_Appointment__c>) oldMap);
+    }
 
     public static void sendAppointmentEmails(List<Medical_Appointment__c> appointments) {
+        
         List<Medical_Appointment__c> apps = [
             SELECT Id,
                    Email_content__c,

@@ -104,22 +104,25 @@ public class MedicalAppointmentTriggers extends TriggerHandler
             }
         }
     }
-    public static void validateInsurance(List<Medical_Appointment__c> appointments, Map<Id,Medical_Appointment__c> oldMap){
+    private static void validateInsurance(List<Medical_Appointment__c> appointments, Map<Id,Medical_Appointment__c> oldMap){
         Set<Id> patientIds = new Set<Id>();
         Set<Id> facilityIds = new Set<Id>();
         List<Medical_Appointment__c> appointmentsToCheck = new List<Medical_Appointment__c>();
         for(Medical_Appointment__c ma : appointments) {
-            if (oldMap !=null) {
+            Boolean isChanged = false;
+            if (oldMap ==null) {
+                isChanged = true;
+            } else {
                 Medical_Appointment__c oldma = oldMap.get(ma.Id);
-                if(oldma != null || oldma.Patient__c != ma.Patient__c || oldma.Medical_facility__c != ma.Medical_facility__c) {
-                    if(ma.Patient__c !=null && ma.Medical_facility__c != null) {
+                if(oldma != null && (oldma.Patient__c != ma.Patient__c || oldma.Medical_facility__c != ma.Medical_facility__c)) {
+                    isChanged = true;
+                }
+            }
+            if(isChanged == true && ma.Patient__c !=null && ma.Medical_facility__c != null) {
                     patientIds.add(ma.Patient__c);
                     facilityIds.add(ma.Medical_facility__c);
                     appointmentsToCheck.add(ma);
-                    }
                 }
-                
-            } 
         }
         if(patientIds.isEmpty()) return;
         
@@ -136,7 +139,7 @@ public class MedicalAppointmentTriggers extends TriggerHandler
         for(Medical_Appointment__c ma : appointmentsToCheck) {
             if(facilitiesRequiresInsurance.containsKey(ma.Medical_Facility__c) && !insuredPatients.contains(ma.Patient__c))
             {
-                ma.addError('Wybrana placówka wymaga ubezpieczenia, a Pacjent go nie posiada.');
+                ma.addError('Wybrana placówka wymaga ubezpieczenia, a pacjent go nie posiada.');
             }
         }
     }

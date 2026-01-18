@@ -1,20 +1,22 @@
-public class CheckFirstInternistVisit extends TriggerHandler
+public class MedicalAppointmentTriggers extends TriggerHandler
 {
-        
+    private static final String SPECIALIZATION = 'Internist';
+    private static final String ONLINE_RT = 'Online';
+    
     public override void beforeInsert(List<SObject> newList)
     {
-        validate((List<Medical_Appointment__c>) newList, null);
+        validateFirstInternistVisit((List<Medical_Appointment__c>) newList, null);
     }
     public override void beforeUpdate(List<SObject> newList, Map<Id, SObject> oldMap) 
     {
-        validate
+        validateFirstInternistVisit
             (
           	(List<Medical_Appointment__c>) newList,
             (Map<Id, Medical_Appointment__c>) oldMap
         );
     }
     
-    private static void validate(List<Medical_Appointment__c> appointments,
+    private static void validateFirstInternistVisit(List<Medical_Appointment__c> appointments,
                                  Map<Id, Medical_Appointment__c> oldMap)
     {
         Set<Id> patientsIdsToCheck = new Set<Id>();
@@ -23,11 +25,14 @@ public class CheckFirstInternistVisit extends TriggerHandler
         Id onlineRecordTypeId;
         
         Map<String, Schema.RecordTypeInfo> rtMap = Schema.SObjectType.Medical_Appointment__c.getRecordTypeInfosByDeveloperName();
-        if(rtMap.containsKey('Online')) 
+        if(rtMap.containsKey(ONLINE_RT)) 
         {
-            onlineRecordTypeId = rtMap.get('Online').getRecordTypeId();
+            onlineRecordTypeId = rtMap.get(ONLINE_RT).getRecordTypeId();
         }  
-        
+        else
+        {
+            return;
+        }
         for(Medical_Appointment__c appointment : appointments)
         {
             if(oldMap != null && oldMap.containsKey(appointment.Id))
@@ -59,7 +64,8 @@ public class CheckFirstInternistVisit extends TriggerHandler
              [ SELECT Patient__c patientId, COUNT(Id) visitCount
               FROM Medical_Appointment__c 
               WHERE Patient__c IN :patientsIdsToCheck
-              AND Doctor__r.Speciazlization__c = 'Internist'
+              AND Doctor__r.Speciazlization__c = :SPECIALIZATION
+              AND RecordTypeId != :onlineRecordTypeId
               GROUP BY Patient__c
             
              ])
@@ -80,10 +86,20 @@ public class CheckFirstInternistVisit extends TriggerHandler
             if(appointment.RecordTypeId == onlineRecordTypeId)
             {
                 Person__c doc = docMap.get(appointment.Doctor__c);
-                if(doc.Speciazlization__c == 'Internist')
+                if(doc.Speciazlization__c == SPECIALIZATION)
                 {
+                    List<Medical_Appointment__c> onsiteVisits = [
+                        SELECT Appointment_DateTime__c
+                        FROM Medical_Appointment__c
+                        WHERE Patient__c = :appointment.Patient__c
+                          AND Doctor__r.Speciazlization__c = :SPECIALIZATION
+                          AND RecordTypeId != :onlineRecordTypeId
+                        ORDER BY Appointment_DateTime__c ASC
+                        LIMIT 1
+                	];
+                    
                 	Integer visitCount = internistVisitCountByPatient.get(appointment.Patient__c);
-                    if(visitCount == 0 || visitCount == null)
+                    if(onsiteVisits.isEmpty() || visitCount == 0 || visitCount == null || appointment.Appointment_DateTime__c < onsiteVisits[0].Appointment_DateTime__c)
                     {
                         appointment.addError('Pierwsza wizyta u internisty musi być stacjonarnie');
                     }    

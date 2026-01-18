@@ -573,11 +573,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Medical_Facility__c.Closing_Hours__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Medical_Facility__c.Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -599,11 +594,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Medical_Facility__c.Medical_Facility_Code__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Medical_Facility__c.Opening_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

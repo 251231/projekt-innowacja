@@ -111,7 +111,7 @@ public class MedicalAppointmentTriggers extends TriggerHandler
         for(Medical_Appointment__c ma : appointments) {
             if (oldMap !=null) {
                 Medical_Appointment__c oldma = oldMap.get(ma.Id);
-                if(oldma != null || oldma.Patient__c != ma.Patient__c || oldma.Medical_facility__c != ma.Medical_facility__c || oldma.Patient__c.Status__c != ma.Patient__c.Status__c) {
+                if(oldma != null || oldma.Patient__c != ma.Patient__c || oldma.Medical_facility__c != ma.Medical_facility__c) {
                     if(ma.Patient__c !=null && ma.Medical_facility__c != null) {
                     patientIds.add(ma.Patient__c);
                     facilityIds.add(ma.Medical_facility__c);

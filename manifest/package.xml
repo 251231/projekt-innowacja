@@ -62,6 +62,8 @@
         <members>MedicalFacilityCalloutMock</members>
         <members>MedicalFacilityCalloutTest</members>
         <members>MedicalFacilitySchedule</members>
+        <members>DoctorWorkSchedulesCallout</members>
+        <members>DoctorWorkSchedulesCalloutTest</members>
         <name>ApexClass</name>
     </types>
     <types>

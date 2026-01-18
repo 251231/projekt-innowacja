@@ -28,6 +28,10 @@
                 <behavior>Required</behavior>
                 <field>Speciazlization__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Person_External_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

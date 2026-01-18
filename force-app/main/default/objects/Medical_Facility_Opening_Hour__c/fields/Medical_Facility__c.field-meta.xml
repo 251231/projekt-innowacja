@@ -4,7 +4,6 @@
     <externalId>false</externalId>
     <label>Medical Facility</label>
     <referenceTo>Medical_Facility__c</referenceTo>
-    <relationshipLabel>Medical Facility Opening Hours</relationshipLabel>
     <relationshipName>Medical_Facility_Opening_Hours</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>

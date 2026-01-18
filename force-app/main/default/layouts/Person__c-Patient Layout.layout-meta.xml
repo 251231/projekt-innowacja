@@ -27,6 +27,10 @@
                 <behavior>Required</behavior>
                 <field>Personal_ID_Number__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Person_External_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>

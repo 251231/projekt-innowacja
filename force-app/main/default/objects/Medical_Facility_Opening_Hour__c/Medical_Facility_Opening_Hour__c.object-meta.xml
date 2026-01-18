@@ -156,7 +156,7 @@
     <label>Medical Facility Opening Hour</label>
     <nameField>
         <displayFormat>{0000}</displayFormat>
-        <label>Medical Facility Opening Hour Name</label>
+        <label>Opening Hour Name</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>

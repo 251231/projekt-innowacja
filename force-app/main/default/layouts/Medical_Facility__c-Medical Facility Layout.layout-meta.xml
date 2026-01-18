@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -97,7 +98,8 @@
         <relatedList>Medical_Appointment__c.Medical_facility__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
+        <fields>Day__c</fields>
+        <fields>Opening_Hour__c</fields>
         <relatedList>Medical_Facility_Opening_Hour__c.Medical_Facility__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

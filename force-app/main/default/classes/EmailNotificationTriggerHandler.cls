@@ -10,7 +10,6 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
 
     public static void sendAppointmentEmails(List<Medical_Appointment__c> appointments) {
 
-        // Pobieramy wszystkie potrzebne pola
         List<Medical_Appointment__c> apps = [
             SELECT Id,
                    Appointment_Type__c,
@@ -22,11 +21,10 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
             WHERE Id IN :appointments
         ];
 
-        if (apps.isEmpty()) return; // nic do wysłania
+        if (apps.isEmpty()) return; 
 
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
 
-        // Pobieramy template (jeśli istnieje)
         EmailTemplate template;
         try {
             template = [
@@ -41,22 +39,18 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
 
         for (Medical_Appointment__c app : apps) {
 
-            // Jeśli brak maila pacjenta – pomijamy
-            if (String.isBlank(app.Patient__r.Email__c)) {
-                continue;
-            }
+            
 
             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
             email.setToAddresses(new List<String>{ app.Patient__r.Email__c });
             email.setSubject('Powiadomienie o wizycie');
             email.setSaveAsActivity(false);
 
-            // Jeżeli jest template – używamy go
+            
             if (template != null) {
                 email.setTemplateId(template.Id);
-                email.setWhatId(app.Id); // do merge fields w szablonie
+                email.setWhatId(app.Id); 
             } 
-            // W przeciwnym razie wysyłamy treść "na sztywno"
             else {
                 email.setPlainTextBody(
                     'Dzień dobry ' + app.Patient__r.Name + ',\n\n' +
@@ -72,7 +66,6 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
             emails.add(email);
         }
 
-        // Wysyłka maili
         if (!emails.isEmpty()) {
             Messaging.sendEmail(emails);
         }

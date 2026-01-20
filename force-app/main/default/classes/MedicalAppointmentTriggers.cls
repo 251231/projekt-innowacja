@@ -5,13 +5,21 @@ public class MedicalAppointmentTriggers extends TriggerHandler
     
     public override void beforeInsert(List<SObject> newList)
     {
+        try {
         validateFirstInternistVisit((List<Medical_Appointment__c>) newList, null);
         validateInsurance((List<Medical_Appointment__c>) newList, null);
+        } catch (Exception e) {
+            TriggerErrorHandler.handleError(e, 'MedicalAppointmentTriggers.beforeInsert');
+        }
     }
     public override void beforeUpdate(List<SObject> newList, Map<Id, SObject> oldMap) 
     {
+        try {
         validateFirstInternistVisit((List<Medical_Appointment__c>) newList,(Map<Id, Medical_Appointment__c>) oldMap);
         validateInsurance((List<Medical_Appointment__c>) newList,(Map<Id, Medical_Appointment__c>) oldMap);
+        } catch (Exception e) {
+            TriggerErrorHandler.handleError(e, 'MedicalAppointmentTriggers.beforeUpdate');
+        }
     }
     
     private static void validateFirstInternistVisit(List<Medical_Appointment__c> appointments, Map<Id, Medical_Appointment__c> oldMap)

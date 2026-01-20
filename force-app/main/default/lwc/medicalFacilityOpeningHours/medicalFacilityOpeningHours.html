@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Godziny otwarcia" icon-name="standard:service_appointment">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-p-vertical_x-small slds-text-title_caps">
+                <div class="slds-col slds-size_1-of-3">
+                    Dzień
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    Otwarcie
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    Zamknięcie
+                </div>
+            </div>
+            <template for:each={parsedOpeningHours} for:item="item">
+                <div key={item.id} class="slds-grid slds-p-vertical_x-small">
+                    <div class="slds-col slds-size_1-of-3">
+                        {item.day}
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <template if:true={item.isClosed}>
+                            Zamknięte
+                        </template>
+                        <template if:false={item.isClosed}>
+                            {item.openTime}
+                        </template>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <template if:false={item.isClosed}>
+                            {item.closeTime}
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

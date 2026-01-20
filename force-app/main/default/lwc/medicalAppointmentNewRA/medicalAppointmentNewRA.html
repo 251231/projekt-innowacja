@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="New Medical Appointment">
+
+        <c-custom-lookup
+            label="Doctor"
+            placeholder="Search Doctors..."
+            onsearch={searchDoctors}
+            onselect={doctorSelected}
+            onclear={doctorCleared}>
+        </c-custom-lookup>
+
+        <c-custom-lookup
+            label="Medical Facility"
+            placeholder="Search Facilities..."
+            onsearch={searchFacilities}
+            onselect={facilitySelected}
+            onclear={facilityCleared}>
+        </c-custom-lookup>
+
+    </lightning-card>
+</template>

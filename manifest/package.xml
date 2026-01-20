@@ -37,6 +37,14 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>unfiled$public/Appointment_Notification_HTML</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Email_Template_Flow</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>Person__c.Validate_PESEL</members>
         <members>Medical_Insurance__c.Start_Date_Cannot_Be_Later_Than_Exp_date</members>
         <members>Person__c.Validation_pesel_and_birthdate</members>

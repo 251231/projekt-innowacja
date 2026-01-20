@@ -1,0 +1,16 @@
+<p>Dzień dobry {!Medical_Appointment__c.Patient__c},</p>
+
+<p>
+Informujemy o utworzeniu lub edycji wizyty medycznej. colasinac
+</p>
+
+<p>
+<b>Lekarz:</b> {!Medical_Appointment__c.Doctor__c}<br/>
+<b>Typ wizyty:</b> {!Medical_Appointment__c.Appointment_Type__c}<br/>
+<b>Status wizyty:</b> {!Medical_Appointment__c.Appointment_Status__c}
+</p>
+
+<p>
+Pozdrawiamy,<br/>
+{!Medical_Appointment__c.Medical_facility__c}
+</p>

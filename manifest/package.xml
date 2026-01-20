@@ -25,11 +25,16 @@
         <name>Layout</name>
     </types>
     <types>
+        <members>medicalFacilityMap</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
         <members>Medical_Appointment__c</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
         <members>Prescription__c</members>
         <members>Person__c</members>
+        <members>Medical_Facilities_Map</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -63,6 +68,11 @@
         <name>RecordType</name>
     </types>
     <types>
+        <members>Medical_Facilities_Map</members>
+        <name>FlexiPage</name>
+    </types>
+    
+    <types>
         <members>CheckInsuranceTriggerHandler</members>
         <members>TriggerHandler</members>
         <members>EmailNotificationTriggerHandler</members>
@@ -72,7 +82,7 @@
         <members>MedicalFacilitySchedule</members>
         <members>DoctorWorkSchedulesCallout</members>
         <members>DoctorWorkSchedulesCalloutTest</members>
-        
+        <members>MedicalFacilityMapController</members>
         <members>MedicalAppointmentTriggerHandler</members>
         <name>ApexClass</name>
     </types>

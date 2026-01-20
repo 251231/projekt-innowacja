@@ -17,6 +17,7 @@
     <tabs>Medical_Insurance__c</tabs>
     <tabs>Person__c</tabs>
     <tabs>Prescription__c</tabs>
+    <tabs>Medical_Facilities_Map</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>MediMeetAssistant_UtilityBar</utilityBar>
 </CustomApplication>

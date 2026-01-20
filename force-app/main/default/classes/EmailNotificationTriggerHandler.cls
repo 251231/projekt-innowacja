@@ -30,7 +30,6 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
 
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
 
-        // CLASSIC TEXT EMAIL TEMPLATE
         EmailTemplate template;
         try {
             template = [
@@ -45,16 +44,10 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
 
         for (Medical_Appointment__c app : apps) {
 
-            // zabezpieczenia
-             
-
             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
             
-
-            // adres pacjenta
             email.setToAddresses(new List<String>{ app.Patient__r.Email__c });
 
-            // Contact tylko do renderu template
             email.setTargetObjectId(app.Patient__r.Contact__c);
 
             email.setSaveAsActivity(false);
@@ -63,7 +56,6 @@ public class EmailNotificationTriggerHandler extends TriggerHandler {
                 email.setTemplateId(template.Id);
                 email.setWhatId(app.Id);
             } else {
-                // fallback – SZTYWNO w kodzie
                 email.setSubject('Powiadomienie o wizycie');
                 email.setPlainTextBody(
                     'Dzień dobry ' + app.Patient__r.Name + ',\n\n' +

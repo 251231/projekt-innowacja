@@ -38,6 +38,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MedicalFacilityMapController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MedicalFacilitySchedule</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -347,6 +351,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Medical_Appointment__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Medical_Facilities_Map</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

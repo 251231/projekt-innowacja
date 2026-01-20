@@ -69,6 +69,7 @@
     </types>
     <types>
         <members>Medical_Facilities_Map</members>
+        <members>openingHours</members>
         <name>FlexiPage</name>
     </types>
     
@@ -84,6 +85,7 @@
         <members>DoctorWorkSchedulesCalloutTest</members>
         <members>MedicalFacilityMapController</members>
         <members>MedicalAppointmentTriggerHandler</members>
+        <members>TriggerErrorHandler</members>
         <name>ApexClass</name>
     </types>
     <types>

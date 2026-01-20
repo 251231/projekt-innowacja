@@ -1,11 +1,19 @@
 public class EmailNotificationTriggerHandler extends TriggerHandler {
 
     public override void afterInsert(List<SObject> newList) {
-        sendAppointmentEmails((List<Medical_Appointment__c>) newList);
+        try {
+            sendAppointmentEmails((List<Medical_Appointment__c>) newList);
+        } catch (Exception e) {
+            TriggerErrorHandler.handleError(e, 'EmailNotificationTriggerHandler.afterInsert');
+        }
     }
     
     public override void afterUpdate(List<SObject> newList, Map<Id, SObject> oldMap) {
+        try {
         sendAppointmentEmails((List<Medical_Appointment__c>) newList);
+        } catch (Exception e) {
+            TriggerErrorHandler.handleError(e, 'EmailNotificationTriggerHandler.afterUpdate');
+        }
     }
 
     public static void sendAppointmentEmails(List<Medical_Appointment__c> appointments) {

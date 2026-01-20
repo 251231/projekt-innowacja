@@ -63,12 +63,15 @@
         <members>MedicalFacilitySchedule</members>
         <members>DoctorWorkSchedulesCallout</members>
         <members>DoctorWorkSchedulesCalloutTest</members>
+        
+        <members>MedicalAppointmentTriggerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>CheckInsurance</members>
         <members>MedicalAppointmentEmailTrigger</members>
         <members>CheckFirstInternistVisitTrigger</members>
+        <members>MedicalAppointmentValidation</members>
         <name>ApexTrigger</name>
     </types>
     <types>

@@ -8,6 +8,7 @@
         <members>Prescription__c</members>
         <members>Person__c</members>
         <members>Medical_Facility_Opening_Hour__c</members>
+        <members>Doctor_Facility_Assignment__c</members>
         <name>CustomObject</name>
     </types>
     <types>

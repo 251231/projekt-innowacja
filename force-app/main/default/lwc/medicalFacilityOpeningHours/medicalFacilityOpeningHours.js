@@ -41,4 +41,4 @@ export default class MedicalFacilityOpeningHours extends LightningElement {
             };
         });
     }
-}        
+}

@@ -38,6 +38,9 @@ public class MedicalAppointmentTriggers extends TriggerHandler
         {
             return;
         }
+
+        List<Medical_Appointment__c> filterdAppointments = new List<Medical_Appointment__c>();
+
         for(Medical_Appointment__c appointment : appointments)
         {
             if(oldMap != null && oldMap.containsKey(appointment.Id))
@@ -56,6 +59,7 @@ public class MedicalAppointmentTriggers extends TriggerHandler
             {
                 patientsIdsToCheck.add(appointment.Patient__c);
                 doctorIdsToCheck.add(appointment.Doctor__c);
+                filterdAppointments.add(appointment);
             }
         }
         
@@ -86,30 +90,29 @@ public class MedicalAppointmentTriggers extends TriggerHandler
             );
         
         
-        for(Medical_Appointment__c appointment : appointments)
+        for(Medical_Appointment__c appointment : filterdAppointments)
         {
-            if(appointment.RecordTypeId == onlineRecordTypeId)
+            
+            Person__c doc = docMap.get(appointment.Doctor__c);
+            if(doc.Speciazlization__c == SPECIALIZATION)
             {
-                Person__c doc = docMap.get(appointment.Doctor__c);
-                if(doc.Speciazlization__c == SPECIALIZATION)
+                List<Medical_Appointment__c> onsiteVisits = [
+                    SELECT Appointment_DateTime__c
+                    FROM Medical_Appointment__c
+                    WHERE Patient__c = :appointment.Patient__c
+                        AND Doctor__r.Speciazlization__c = :SPECIALIZATION
+                        AND RecordTypeId != :onlineRecordTypeId
+                    ORDER BY Appointment_DateTime__c ASC
+                    LIMIT 1
+                ];
+                
+                Integer visitCount = internistVisitCountByPatient.get(appointment.Patient__c);
+                if(onsiteVisits.isEmpty() || visitCount == 0 || visitCount == null || appointment.Appointment_DateTime__c < onsiteVisits[0].Appointment_DateTime__c)
                 {
-                    List<Medical_Appointment__c> onsiteVisits = [
-                        SELECT Appointment_DateTime__c
-                        FROM Medical_Appointment__c
-                        WHERE Patient__c = :appointment.Patient__c
-                          AND Doctor__r.Speciazlization__c = :SPECIALIZATION
-                          AND RecordTypeId != :onlineRecordTypeId
-                        ORDER BY Appointment_DateTime__c ASC
-                        LIMIT 1
-                	];
-                    
-                	Integer visitCount = internistVisitCountByPatient.get(appointment.Patient__c);
-                    if(onsiteVisits.isEmpty() || visitCount == 0 || visitCount == null || appointment.Appointment_DateTime__c < onsiteVisits[0].Appointment_DateTime__c)
-                    {
-                        appointment.addError('Pierwsza wizyta u internisty musi być stacjonarnie');
-                    }    
-                }
+                    appointment.addError('Pierwsza wizyta u internisty musi być stacjonarnie');
+                }    
             }
+            
         }
     }
     private static void validateInsurance(List<Medical_Appointment__c> appointments, Map<Id,Medical_Appointment__c> oldMap){

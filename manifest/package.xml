@@ -86,7 +86,12 @@
         <members>MedicalFacilityMapController</members>
         <members>MedicalAppointmentTriggerHandler</members>
         <members>TriggerErrorHandler</members>
+        <members>MedicalAppointmentWizardController</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>MedicalAppointmentForm</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>CheckInsurance</members>

@@ -3,18 +3,16 @@ import getFacilities from '@salesforce/apex/MedicalFacilityMapController.getFaci
 
 const DEFAULT_ZOOM = 6;
 
+
 export default class MedicalFacilityMap extends LightningElement {
 
-    get hasMarkers() {
-        return this.mapMarkers && this.mapMarkers.length > 0;
-    }
-
-    @track allFacilities = [];
     @track filteredFacilities = [];
     @track mapMarkers = [];
 
     searchKey = '';
     zoomLevel = DEFAULT_ZOOM;
+    showMap = true;
+
 
     polandCenter = {
         location: {
@@ -24,11 +22,16 @@ export default class MedicalFacilityMap extends LightningElement {
     };
 
     columns = [
-        {
-            label: 'Name',
-            fieldName: 'Name',
-            type: 'text'
+    {
+        label: 'Name',
+        fieldName: 'Name',
+        type: 'button',
+        typeAttributes: {
+            label: { fieldName: 'Name' },
+            name: 'select',
+            variant: 'base'
         }
+    }
     ];
 
     buildMarker(f) {
@@ -48,37 +51,42 @@ export default class MedicalFacilityMap extends LightningElement {
         };
     }
 
-    @wire(getFacilities)
+    @wire(getFacilities, { searchKey: '$searchKey' })
     wiredFacilities({ data, error }) {
         if (data) {
-            this.allFacilities = data;
             this.filteredFacilities = data;
             this.mapMarkers = data.map(f => this.buildMarker(f));
+            
         } else if (error) {
             console.error(error);
         }
     }
+
     handleSearch(event) {
-        const value = (event.target.value || '').trim().toLowerCase();
-        this.searchKey = value;
-
-        if (!value) {
-            this.filteredFacilities = this.allFacilities;
-            this.mapMarkers = this.allFacilities.map(f => this.buildMarker(f));
-            return;
-        }
-
-        const results = this.allFacilities.filter(f =>
-            f.Name && f.Name.toLowerCase().includes(value)
-        );
-
-        this.filteredFacilities = results;
-
-        if (results.length === 0) {
-            this.mapMarkers = [];
-            return;
-        }
-
-        this.mapMarkers = results.map(f => this.buildMarker(f));
+        this.searchKey = event.target.value;
     }
+    handleRowAction(event) {
+        if (event.detail.action.name !== 'select') {
+            return;
+        }
+
+        const facility = event.detail.row;
+
+        this.polandCenter = {
+            location: {
+                Street: facility.Medical_Facility_Address__Street__s,
+                City: facility.Medical_Facility_Address__City__s,
+                PostalCode: facility.Medical_Facility_Address__PostalCode__s,
+                Country: facility.Medical_Facility_Address__CountryCode__s
+            }
+        };
+
+        this.zoomLevel = 14;
+
+        this.showMap = false;
+        requestAnimationFrame(() => {
+            this.showMap = true;
+        });
+    }
+
 }

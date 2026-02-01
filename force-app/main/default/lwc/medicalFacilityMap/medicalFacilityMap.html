@@ -3,12 +3,14 @@
         <div class="slds-grid slds-gutters slds-p-around_medium">
 
             <div class="slds-col slds-size_2-of-3">
-                <lightning-map
-                    map-markers={mapMarkers}
-                    center={polandCenter}
-                    zoom-level={zoomLevel}
-                    list-view="hidden">
-                </lightning-map>
+                <template if:true={showMap}>
+                    <lightning-map
+                        map-markers={mapMarkers}
+                        center={polandCenter}
+                        zoom-level={zoomLevel}
+                        list-view="hidden">
+                    </lightning-map>
+                </template>
             </div>
 
             <div class="slds-col slds-size_1-of-3">
@@ -23,8 +25,10 @@
                     key-field="Id"
                     data={filteredFacilities}
                     columns={columns}
-                    hide-checkbox-column>
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}>
                 </lightning-datatable>
+                
             </div>
 
         </div>

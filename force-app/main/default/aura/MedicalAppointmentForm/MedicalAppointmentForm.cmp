@@ -11,6 +11,12 @@
     <aura:attribute name="doctors" type="List"/>
     <aura:attribute name="patients" type="List"/>
 
+    <aura:attribute name="specialization" type="String"/>
+    <aura:attribute name="specializationOptions" type="List"/>
+
+    <aura:attribute name="isDoctorDisabled" type="Boolean" default="true"/>
+
+
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <lightning:recordEditForm
@@ -24,6 +30,14 @@
         <lightning:inputField fieldName="Duration_Time__c"/>
         <lightning:inputField fieldName="Department__c"/>
         <lightning:inputField fieldName="Reason__c"/>
+        
+
+        <lightning:combobox
+            label="Specialization"
+            value="{!v.specialization}"
+            options="{!v.specializationOptions}"
+            onchange="{!c.handleSpecializationChange}"
+            required="true"/>
 
         <lightning:combobox
             label="Medical Facility"
@@ -42,8 +56,9 @@
             label="Doctor"
             value="{!v.doctorId}"
             options="{!v.doctors}"
-            onchange="{!c.handleDoctorChange}"
+            disabled="{!v.isDoctorDisabled}"
             required="true"/>
+
 
         <lightning:inputField fieldName="Medical_Facility__c" value="{!v.facilityId}" class="slds-hide"/>
         <lightning:inputField fieldName="Doctor__c" value="{!v.doctorId}" class="slds-hide"/>

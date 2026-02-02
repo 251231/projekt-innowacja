@@ -1,15 +1,15 @@
 ({
     doInit : function(component, event, helper) {
         helper.loadFacilities(component);
-        helper.loadDoctors(component);
         helper.loadPatients(component);
+        helper.loadSpecializations(component); 
     },
 
-    handleFacilityChange : function(component, event, helper) {
-        var facilityId = component.get("v.facilityId");
-        if (!facilityId) return;
 
-        helper.loadDoctorsByFacility(component, facilityId);
+
+    handleFacilityChange : function(component, event, helper) {
+        component.set("v.facilityId", event.getParam("value"));
+        helper.evaluateDoctorState(component);
     },
 
     handleDoctorChange : function(component, event, helper) {
@@ -31,5 +31,11 @@
 
     handleError : function(component, event) {
         console.error("SAVE ERROR", event.getParam("error"));
-    }
+    },
+    handleSpecializationChange : function(component, event, helper) {
+        component.set("v.specialization", event.getParam("value"));
+        helper.evaluateDoctorState(component);
+    },
+
+
 })

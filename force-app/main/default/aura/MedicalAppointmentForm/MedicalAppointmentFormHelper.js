@@ -55,5 +55,61 @@
             }
         });
         $A.enqueueAction(action);
-    }
+    },
+    loadDoctorsByFacilityAndSpecialization : function(component) {
+        this.callApex(
+            component,
+            "getDoctorsByFacilityAndSpecialization",
+            {
+                facilityId: component.get("v.facilityId"),
+                specialization: component.get("v.specialization")
+            },
+            function(data) {
+                var options = data.map(d => ({
+                    label: d.Name,
+                    value: d.Id
+                }));
+
+                component.set("v.doctors", options);
+                component.set("v.isDoctorDisabled", false);
+
+                component.set(
+                    "v.doctorId",
+                    options.length ? options[0].value : null
+                );
+            }
+        );
+    },
+
+    loadSpecializations : function(component) {
+        this.callApex(
+            component,
+            "getDoctorSpecializations",
+            {},
+            function(data) {
+                component.set(
+                    "v.specializationOptions",
+                    data.map(v => ({
+                        label: v,
+                        value: v
+                    }))
+                );
+            }
+        );
+    },
+    evaluateDoctorState : function(component) {
+        var facilityId = component.get("v.facilityId");
+        var specialization = component.get("v.specialization");
+
+        if (!facilityId || !specialization) {
+            component.set("v.isDoctorDisabled", true);
+            component.set("v.doctors", []);
+            component.set("v.doctorId", null);
+            return;
+        }
+
+        this.loadDoctorsByFacilityAndSpecialization(component);
+    },
+
+
 })

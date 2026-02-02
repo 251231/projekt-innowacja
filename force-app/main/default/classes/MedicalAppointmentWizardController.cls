@@ -69,4 +69,39 @@ public with sharing class MedicalAppointmentWizardController {
         }
         return result;
     }
+    @AuraEnabled
+    public static List<Person__c> getDoctorsByFacilityAndSpecialization(
+        Id facilityId,
+        String specialization
+    ) {
+        if (facilityId == null || String.isBlank(specialization)) {
+            return new List<Person__c>();
+        }
+
+        return [
+            SELECT Id, Name
+            FROM Person__c
+            WHERE RecordType.DeveloperName = 'Doctor'
+            AND Speciazlization__c = :specialization
+            AND Id IN (
+                SELECT Person__c
+                FROM Doctor_Facility_Assignment__c
+                WHERE Medical_Facility__c = :facilityId
+            )
+            ORDER BY Name
+        ];
+    }
+    @AuraEnabled(cacheable=true)
+    public static List<String> getDoctorSpecializations() {
+        Schema.DescribeFieldResult d =
+            Person__c.Speciazlization__c.getDescribe();
+
+        List<String> values = new List<String>();
+        for (Schema.PicklistEntry pe : d.getPicklistValues()) {
+            values.add(pe.getValue());
+        }
+        return values;
+    }
+
+
 }
